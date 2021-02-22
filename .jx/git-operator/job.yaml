@@ -53,7 +53,7 @@ spec:
         workingDir: /workspace
       containers:
       - args:
-        - ls
+        - /usr/local/bin/keptn-operator.py
         image: thschue/keptn-git
         imagePullPolicy: Always
         name: job
