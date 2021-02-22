@@ -45,7 +45,7 @@ spec:
           value: jenkins-x-labs-bot
         - name: XDG_CONFIG_HOME
           value: /workspace/xdg_config
-        image: gcr.io/jenkinsxio-labs-private/jx-cli:0.0.214
+        image: thschue/keptn-git
         name: git-clone
         volumeMounts:
         - mountPath: /workspace
@@ -54,7 +54,7 @@ spec:
       containers:
       - args:
         - ls
-        image: gcr.io/jenkinsxio-labs-private/jx-cli:0.0.214
+        image: thschue/keptn-git
         imagePullPolicy: Always
         name: job
         volumeMounts:
