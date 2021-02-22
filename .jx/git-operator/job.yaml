@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  labels:
+    app: jx-boot
+    jenkins-x.io/kind: jx-git-operator
+spec:
+  backoffLimit: 4
+  completions: 1
+  parallelism: 1
+  template:
+    metadata:
+      labels:
+        app: jx-boot
+        jenkins-x.io/kind: jx-git-operator
+    spec:
+      containers:
+      - args:
+        - echo
+        - "hello world" 
+        image: busybox
+        imagePullPolicy: Always
+        name: job
+        volumeMounts:
+      restartPolicy: Never
+      terminationGracePeriodSeconds: 30
