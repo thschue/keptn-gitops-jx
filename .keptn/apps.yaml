@@ -1,0 +1,8 @@
+appgateway:
+  stages:
+  - name: "dev"
+    image: "asdf1234"
+  - name: "prod" 
+    image: "yxcv"
+    
+   
