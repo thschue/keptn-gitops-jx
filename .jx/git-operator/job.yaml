@@ -61,6 +61,14 @@ spec:
         - mountPath: /workspace
           name: workspace-volume
         workingDir: /workspace/source
+        env:
+        - name: KEPTN_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: keptn-api-token
+              name: keptn-api-token
+        - name: KEPTN_API_ENDPOINT
+          value: "http://api-gateway-nginx.keptn"
       dnsPolicy: ClusterFirst
       restartPolicy: Never
       schedulerName: default-scheduler
